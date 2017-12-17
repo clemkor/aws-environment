@@ -3,8 +3,10 @@
   - "overrides"
   - "env"
   - "yaml"
+:logger: "noop"
 :yaml:
   :datadir: "config/infra"
 :hierarchy:
-  - "%{role}"
+  - "roles/%{role}"
+  - "deployments/%{deployment}"
   - "defaults"

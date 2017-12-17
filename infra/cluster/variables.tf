@@ -15,5 +15,5 @@ variable "cluster_desired_capacity" {}
 variable "cluster_instance_root_block_device_size" {}
 variable "cluster_instance_docker_block_device_size" {}
 
-variable "state_bucket" {}
+variable "network_state_bucket_name" {}
 variable "network_state_key" {}

@@ -1,0 +1,10 @@
+---
+cluster_instance_ssh_public_key_path: "%{cwd}/config/secrets/keys/%{hiera('deployment_identifier')}/ssh.public"
+
+cluster_instance_type: "t2.medium"
+cluster_minimum_size: 1
+cluster_maximum_size: 2
+cluster_desired_capacity: 1
+
+cluster_instance_root_block_device_size: 30
+cluster_instance_docker_block_device_size: 30
