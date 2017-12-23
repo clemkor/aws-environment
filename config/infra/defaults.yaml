@@ -6,7 +6,7 @@ component: "environment"
 vpc_cidr: "10.0.0.0/16"
 private_network_cidr: "10.0.0.0/8"
 
-storage_bucket_name: "eth-quest-%{hiera('component')}-%{hiera('deployment_identifier')}"
+storage_bucket_name: "eth-quest-%{hiera('component')}-storage-%{hiera('deployment_identifier')}"
 
 domain_name: "eth-quest.net"
 
@@ -14,7 +14,7 @@ common_state_bucket_name: "eth-quest-aws-global"
 common_state_key: "deployment-state/common/default.tfstate"
 
 network_state_bucket_name: "%{hiera('storage_bucket_name')}"
-network_state_key: "environment/deployment-state/network/default.tfstate"
+network_state_key: "deployment-state/network/default.tfstate"
 
 cluster_state_bucket_name: "%{hiera('storage_bucket_name')}"
-cluster_state_key: "environment/deployment-state/cluster/default.tfstate"
+cluster_state_key: "deployment-state/cluster/default.tfstate"
