@@ -1,23 +1,12 @@
 data "aws_availability_zones" "all" {}
 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
-  owners = ["amazon"]
-
-  name_regex = "^amzn-ami-hvm-\\d{4}\\.\\d{2}\\.\\d*"
-
-  filter {
-    name = "name"
-    values = ["amzn-ami-hvm-*-gp2"]
-  }
-}
-
 module "network" {
-  source = "github.com/infrablocks/terraform-aws-base-networking?ref=0.1.16//src"
+  source = "infrablocks/base-networking/aws"
+  version = "0.1.24"
 
   region = "${var.region}"
-  availability_zones = "${join(",", data.aws_availability_zones.all.names)}"
   vpc_cidr = "${var.vpc_cidr}"
+  availability_zones = "${join(",", data.aws_availability_zones.all.names)}"
 
   component = "${var.component}"
   deployment_identifier = "${var.deployment_identifier}"

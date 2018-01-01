@@ -6,5 +6,8 @@ cluster_minimum_size: 1
 cluster_maximum_size: 2
 cluster_desired_capacity: 1
 
-cluster_instance_root_block_device_size: 30
+cluster_instance_root_block_device_size: 100
 cluster_instance_docker_block_device_size: 30
+
+associate_public_ip_addresses: "yes"
+include_default_ingress_rule: "no"

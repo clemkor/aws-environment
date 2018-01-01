@@ -1,5 +1,4 @@
 variable "region" {}
-variable "private_network_cidr" {}
 
 variable "component" {}
 variable "deployment_identifier" {}
@@ -14,6 +13,9 @@ variable "cluster_desired_capacity" {}
 
 variable "cluster_instance_root_block_device_size" {}
 variable "cluster_instance_docker_block_device_size" {}
+
+variable "associate_public_ip_addresses" {}
+variable "include_default_ingress_rule" {}
 
 variable "network_state_bucket_name" {}
 variable "network_state_key" {}
