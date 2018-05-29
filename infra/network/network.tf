@@ -2,7 +2,7 @@ data "aws_availability_zones" "all" {}
 
 module "network" {
   source = "infrablocks/base-networking/aws"
-  version = "0.2.0"
+  version = "0.2.1"
 
   region = "${var.region}"
   vpc_cidr = "${var.vpc_cidr}"
