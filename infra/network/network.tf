@@ -2,7 +2,7 @@ data "aws_availability_zones" "all" {}
 
 module "network" {
   source = "infrablocks/base-networking/aws"
-  version = "0.1.24"
+  version = "0.2.0"
 
   region = "${var.region}"
   vpc_cidr = "${var.vpc_cidr}"
@@ -14,4 +14,5 @@ module "network" {
   private_zone_id = "${data.terraform_remote_state.common.private_dns_zone_id}"
 
   include_lifecycle_events = "no"
+  include_nat_gateway = "no"
 }
